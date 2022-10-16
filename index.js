@@ -1,11 +1,13 @@
 const { createApp } = Vue;
 createApp({
+  // Model
   data() {
     return {
       notes: ["Note 1", "Note 2", "Note 3"],
       text: null,
     };
   },
+  // Controller
   methods: {
     add() {
       if (this.text) {
