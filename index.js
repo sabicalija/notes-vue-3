@@ -30,6 +30,7 @@ createApp({
   },
   created() {
     this.notes = JSON.parse(localStorage.getItem("notes")) || [];
+    registerServiceWorker();
   },
 }).mount("#app");
 
@@ -42,4 +43,13 @@ function generateId(title, text, length = 10) {
   return CryptoJS.SHA256(title + text + new Date())
     .toString()
     .substring(0, length);
+}
+
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("/notes-vue-3/sw.js", { scope: "/notes-vue-3/" })
+      .then((registration) => console.log("Service Worker registered!", registration))
+      .catch((error) => console.log("Service Worker registration failed!", error));
+  }
 }
