@@ -17,6 +17,7 @@ body {
   background: unset;
   border: unset;
   outline: unset;
+  display: block;
 }
 
 .input__text {
@@ -24,6 +25,7 @@ body {
   background: unset;
   border: unset;
   outline: unset;
+  display: block;
 }
 
 .input__controls {}
@@ -37,9 +39,12 @@ body {
 .notes {
   padding-left: unset;
   list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .note {
+  flex: 0 1 33.3%;
 }
 
 .note__title {}
