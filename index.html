@@ -34,7 +34,9 @@
             v-model="text"
           ></textarea>
           <div class="input__controls">
-            <button @click="add" class="input__controls__add">Add</button>
+            <button @click="add" class="input__controls__add">
+              <i class="fas fa-plus"></i>
+            </button>
           </div>
         </div>
         <ul ref="list" class="notes">
@@ -43,7 +45,9 @@
               <header class="note__title">{{ note.title }}</header>
               <p class="note__text">{{ note.text }}</p>
               <div class="note__controls">
-                <button @click="del(note.id)" class="note__controls__delete">Delete</button>
+                <button @click="del(note.id)" class="note__controls__delete">
+                  <i class="fas fa-trash"></i>
+                </button>
               </div>
             </article>
           </li>
